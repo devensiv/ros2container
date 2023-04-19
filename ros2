@@ -1,1 +1,8 @@
-podman start -ia ros2
+if [ -z "$1" ]; then 
+	name="ros2-default"
+else
+	name="$1"
+fi
+
+podman start -ia $name
+
