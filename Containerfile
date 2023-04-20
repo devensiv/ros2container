@@ -24,5 +24,5 @@ RUN echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/r
 RUN apt-get update -y
 
 # install ros
-RUN apt-get install -y ros-humble-desktop
+RUN apt-get install -y ros-humble-desktop ros-humble-gazebo-* ros-humble-cartographer-ros ros-humble-nav2-bringup ros-humble-dynamixel-sdk ros-humble-turtlebot3-msgs ros-humble-turtlebot3
 
