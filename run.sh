@@ -7,9 +7,8 @@ else
 fi
 
 podman run -it --rm \
-	--user "$(id -u)":"$(id -g)"\
 	-v ./workdir:/root/workdir \
-	-v "$HOME/.cargo/registry":/usr/local/cargo/registry
+	-v "$HOME/.cargo/registry":/usr/local/cargo/registry \
 	-v /tmp/.X11-unix:/tmp/.X11-unix \
 	-v /dev/dri/card0:/dev/dri/card0 \
 	-v ~/.Xauthority:/tmp/.Xauthority \
@@ -17,5 +16,5 @@ podman run -it --rm \
 	-e DISPLAY \
 	--net=host \
 	--name="$name" \
-	-w /root/workdir
+	-w /root/workdir \
 	ros2-humble bash
