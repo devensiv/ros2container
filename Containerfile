@@ -24,7 +24,7 @@ RUN echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/r
 RUN apt-get update -y
 
 # install ros
-RUN apt-get install -y ros-humble-desktop ros-humble-gazebo-* ros-humble-cartographer-ros ros-humble-nav2-bringup ros-humble-dynamixel-sdk ros-humble-turtlebot3-msgs ros-humble-turtlebot3 ros-humble-turtlebot3-gazebo
+RUN apt-get install -y --fix-missing ros-humble-desktop ros-humble-gazebo-* ros-humble-cartographer-ros ros-humble-nav2-bringup ros-humble-dynamixel-sdk ros-humble-turtlebot3-msgs ros-humble-turtlebot3 ros-humble-turtlebot3-gazebo
 
 # install rust
 RUN apt-get install -y cargo
