@@ -29,4 +29,3 @@ RUN apt-get install -y ros-humble-desktop ros-humble-gazebo-* ros-humble-cartogr
 # install rust
 RUN apt-get install -y cargo
 
-RUN chown 666 /root -R
