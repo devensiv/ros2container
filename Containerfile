@@ -2,11 +2,10 @@ from ubuntu:latest
 
 # Copy needed files
 COPY sysinit.vim /usr/share/nvim/sysinit.vim
-# COPY doas.conf /etc/doas.conf
 COPY .bashrc /root/.bashrc
 
 # Update system and install software
-RUN apt-get update -y && apt-get install -y neovim locales curl # doas
+RUN apt-get update -y && apt-get install -y neovim locales curl
 
 # Setup locale
 RUN locale-gen en_US en_US.UTF-8
@@ -24,8 +23,5 @@ RUN echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/r
 RUN apt-get update -y
 
 # install ros
-RUN apt-get install -y --fix-missing ros-humble-desktop ros-humble-gazebo-* ros-humble-cartographer-ros ros-humble-nav2-bringup ros-humble-dynamixel-sdk ros-humble-turtlebot3-msgs ros-humble-turtlebot3 ros-humble-turtlebot3-gazebo
-
-# install rust
-RUN apt-get install -y cargo
+RUN apt-get install -y --fix-missing ros-humble-desktop ros-humble-gazebo-* ros-humble-cartographer-ros ros-humble-nav2-bringup ros-humble-dynamixel-sdk 
 
